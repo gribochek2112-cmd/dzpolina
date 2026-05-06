@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Расписание 10-А (версия 2)</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b') no-repeat center/cover;
+    color: white;
+    text-align: center;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.6);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.menu button {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    border: none;
+    background: #ff7eb3;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu button:hover {
+    background: #ff4f91;
+}
+
+.card {
+    display: none;
+    background: white;
+    color: black;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 70%;
+}
+
+.active {
+    display: block;
+}
+
+.lesson {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+</style>
+
+<script>
+function clickSound() {
+    let sound = new Audio("https://www.soundjay.com/buttons/sounds/button-09.mp3");
+    sound.play();
+}
+
+function openDay(id) {
+    clickSound();
+    document.querySelectorAll(".card").forEach(c => c.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<h1>📅 Расписание (версия 2)</h1>
+
+<div class="menu">
+    <button onclick="openDay('d1')">Пн</button>
+    <button onclick="openDay('d2')">Вт</button>
+    <button onclick="openDay('d3')">Ср</button>
+    <button onclick="openDay('d4')">Чт</button>
+    <button onclick="openDay('d5')">Пт</button>
+</div>
+
+<div id="d1" class="card active">
+<h3>Понедельник</h3>
+<div class="lesson">1. Час будущего</div>
+<div class="lesson">2. Узбекский язык</div>
+<div class="lesson">3. Алгебра</div>
+<div class="lesson">4. Русская литература</div>
+<div class="lesson">5. Химия</div>
+</div>
+
+<div id="d2" class="card">
+<h3>Вторник</h3>
+<div class="lesson">1. Геометрия</div>
+<div class="lesson">2. Английский</div>
+<div class="lesson">3. Бизнес</div>
+<div class="lesson">4. Английский</div>
+<div class="lesson">5. Физика</div>
+</div>
+
+<div id="d3" class="card">
+<h3>Среда</h3>
+<div class="lesson">1. Узбекский язык</div>
+<div class="lesson">2. Профиль</div>
+<div class="lesson">3. Профиль</div>
+<div class="lesson">4. Профиль</div>
+<div class="lesson">5. Русский язык</div>
+</div>
+
+<div id="d4" class="card">
+<h3>Четверг</h3>
+<div class="lesson">1. Информатика</div>
+<div class="lesson">2. Английский</div>
+<div class="lesson">3. Литература</div>
+<div class="lesson">4. НВП</div>
+<div class="lesson">5. Биология</div>
+<div class="lesson">6. Физика</div>
+</div>
+
+<div id="d5" class="card">
+<h3>Пятница</h3>
+<div class="lesson">1. НДП</div>
+<div class="lesson">2. Физкультура</div>
+<div class="lesson">3. Геометрия</div>
+<div class="lesson">4. Алгебра</div>
+<div class="lesson">5. Воспитание</div>
+<div class="lesson">6. История</div>
+</div>
+
+</div>
+
+</body>
+</html>
